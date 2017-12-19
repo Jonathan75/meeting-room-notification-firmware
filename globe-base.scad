@@ -12,11 +12,18 @@ $fn = 100;
 base_h = 3;
 
 module holder(){
-  x1 = 2.55
-  translate([2.55,2.5,3]) cylinder(h=5,d=2,center=true, $fn=10);
-  translate([2.55,20.35,3]) cylinder(h=5,d=2,center=true, $fn=10);
-  translate([48.25,1.85,3]) cylinder(h=5,d=2,center=true, $fn=10);
-  translate([48.25,20.95,3]) cylinder(h=5,d=2,center=true, $fn=10);
+  module post(){ cylinder(h=5,d=2,center=true, $fn=10); }
+  w = 45;
+  d = 18;
+  h = 3;
+  x1 = 2.55;
+  x2 = x1 + w;
+  y1 = 2.5;
+  y2 = y1 + d;
+  translate([x1,y1,h]) post();
+  translate([x1,y2,h]) post();
+  translate([x2,y1,h]) post();
+  translate([x2,y2,h]) post();
   cube([51,23,1]);
 }
 holder();
