@@ -11,7 +11,7 @@ t = 0.4;
 $fn = 100;
 base_h = 3;
 
-module holder(){
+module huzzah_holder(){
   module post(){ cylinder(h=5,d=2,center=true, $fn=10); }
   w = 46;
   d = 18;
@@ -22,14 +22,14 @@ module holder(){
   y2 = y1 + d;
   translate([x1,y1,h]) post();
   translate([x1,y2,h]) post();
-  translate([x2,y1-1,h]) post();
-  translate([x2,y2+1,h]) post();
+  translate([x2,y1,h]) post();
+  translate([x2,y2,h]) post();
   difference() {
     cube([51,23,1]);
     translate([4,4,-1]) cube([51-8,23-8,3]);
   }
 }
-holder();
+huzzah_holder();
 
 /*
 module clip() {
