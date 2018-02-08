@@ -6,14 +6,11 @@
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PASSWORD;
 
-#define PIN 5
-#define DATA_PIN 5
-#define NUM_LEDS 31
-
 CRGB leds[NUM_LEDS];
 
 void setup() {
-  FastLED.addLeds<WS2811, DATA_PIN, GRB>(leds, NUM_LEDS);
+  FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
+//  FastLED.addLeds<WS2811, DATA_PIN, RGB>(leds, NUM_LEDS);
   pulseWhite();
   Serial.begin(115200);
   delay(100);
@@ -54,10 +51,8 @@ void loop() {
     return;
   }
 
-  String url = "/rooms/1.json";
-
   // This will send the request to the server
-  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+  client.print(String("GET ") + URL + " HTTP/1.1\r\n" +
                "Host: " + host + "\r\n" + 
                "Connection: close\r\n\r\n");
   unsigned long timeout = millis();
@@ -73,7 +68,7 @@ void loop() {
   while(client.available()){
     String line = client.readStringUntil('\r');
     Serial.println(line);  
-    if (line.indexOf("status") >= 0){
+    if (line.indexOf("\"status\":") >= 0){
       char status = line[line.indexOf(":")+1];
       Serial.println(status);  
       led(status);
