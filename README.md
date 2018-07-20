@@ -4,11 +4,9 @@ In short, this is a friendly way to notify people in a meeting room that it's ti
 
 
 ### What Arduino board should I use?
-ESP8266 WiFi
-
-I recommend these name brand boards if this is your first time.
-[Adafruit Feather HUZZAH with ESP8266](https://www.adafruit.com/product/2821)
-[SparkFun ESP8266 Thing](https://www.sparkfun.com/products/13231)
+I recommend these name brand boards if this is your first time.  
+[Adafruit Feather HUZZAH with ESP8266](https://www.adafruit.com/product/2821)  
+[SparkFun ESP8266 Thing](https://www.sparkfun.com/products/13231)  
 
 I recommend Amazon and eBay if you need to get them in bulk because you are setting up an entire office.  
 Just search your favorite online store for "ESP8266 ESP-12E ModeMCU". You should be able to find these in packs of 5 for $15. Buyer beware, you never know what you are going to get. I don't recommend the version ESP-01 as it's harder to connect to and uses 3.3 volts.  You will also be on your own to figure out the hardware drivers.  
@@ -26,8 +24,8 @@ ESP-12E = Newer version of the ESP8266
 ### Getting Started
 
 Things you will need.  
-- WiFi compatible Arduino board, see [What Arduino board should I use?](what-arduino-board-should-i-use)
-- LED's NeoPixel strip or ring, see [What LED's should I use?](what-leds-should-i-use)
+- WiFi compatible Arduino board, see [What Arduino board should I use?](#what-arduino-board-should-i-use)
+- LED's NeoPixel strip or ring, see [What LED's should I use?](#what-leds-should-i-use)
 - A computer running Windows or Mac
 
 1. Follow these steps for downloading the Arduino IDE software and adding the ESP8266 board at
@@ -53,9 +51,12 @@ https://github.com/esp8266/Arduino#installing-with-boards-manager
 #define WIFI_PASSWORD "WLAN AP password here" // "Mom, what's the WiFi password?"
 #define URL "/rooms/4.json" // The ID of the room that you setup on the website
 ```
-1. Now we just need to upload by clicking Sketch > Upload. This is slow and takes about 30 seconds so be patient.  
-1. Wire up the Arduino and LED's as sone below
-1. The LED's should pulse white then blue while it connects to the WiFi
-1. Click button on the on the website and see if the lights up
+16. Now we just need to upload by clicking Sketch > Upload. This is slow and takes about 30 seconds so be patient.  
+17. Wire up the Arduino and LED's as shown below
+18. The LED's should pulse white then blue while it connects to the WiFi
+19. Click a button on the website for the corresponding meeting room and see if the meeting room light responds
 
 ![Wiring Diagram](meeting-light-wiring.png)
+
+Make your light look fancy by putting in a light fixture globe.  There is also 3D model to base that you can print.
+x
